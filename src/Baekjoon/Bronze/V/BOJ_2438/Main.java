@@ -1,4 +1,4 @@
-package Baekjoon.Bronze.BOJ_2438;
+package Baekjoon.Bronze.V.BOJ_2438;
 
 import java.util.*;
 

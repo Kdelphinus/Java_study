@@ -1,4 +1,4 @@
-package Baekjoon.Bronze.BOJ_1000;
+package Baekjoon.Bronze.III.BOJ_10818;
 
 /*
  * Author: Kdelphinus, Ko MyoungJun
@@ -19,14 +19,21 @@ public class Main {
 
     public void solution() throws Exception {
         br = new BufferedReader(new InputStreamReader(System.in));  // 백준 제출용
-        //br = new BufferedReader(new InputStreamReader(new FileInputStream("src/main/java/Baekjoon.Bronze.BOJ_1000.Main/input.txt"))); // 로컬 테스트용
         bw = new BufferedWriter(new OutputStreamWriter(System.out)); // 출력 버퍼 결정
 
-        st = new StringTokenizer(br.readLine()); // 한 줄을 공백 기분으로 분리
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
+        int num = Integer.parseInt(br.readLine());
+        String line = br.readLine();
+        String[] parts = line.split(" ");
 
-        bw.write((a + b) + "\n");  // 개행이 없으면 출력 버퍼에 쌓인 상태로 출력되지 않음
+        List<Integer> numbers = new ArrayList<Integer>();
+        for (String s: parts) {
+            numbers.add(Integer.parseInt(s));
+        }
+
+        int max = Collections.max(numbers);
+        int min = Collections.min(numbers);
+
+        bw.write(min + " " + max + "\n");
 
         bw.flush();  // 출력 버퍼에 남은 데이터 전송
         bw.close();  // 출력 스트림 닫기
